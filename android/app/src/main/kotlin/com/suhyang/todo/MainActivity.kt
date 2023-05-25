@@ -1,0 +1,6 @@
+package com.suhyang.todo
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
