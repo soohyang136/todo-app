@@ -78,9 +78,9 @@ class _AddTodoScreenState extends State<AddTodoScreen> {
             ),
             SizedBox(height: 16),
             TextField(
-              controller: _titleController,
+              controller: _contentController,
               decoration: InputDecoration(
-                labelText: 'todo 제목',
+                labelText: 'todo 내용',
                 labelStyle: TextStyle(
                   color: Color(0xFFF3B0C3), // 포커스된 상태에서의 labelText 색상
                 ),

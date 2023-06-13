@@ -79,26 +79,51 @@ class _StateTodoDetailScreen extends State<TodoDetailScreen> {
                       minimumSize: Size(380, 48),
                       backgroundColor: Color(0xFFFEE1E8)),
                   onPressed: () => {
+                        _titleController.text = todo.title,
+                        _contentController.text = todo.content,
                         showDialog(
                             context: context,
                             builder: (BuildContext context) => AlertDialog(
                                   title: Text('TODO 수정'),
-                                  content: Column(
-                                    children: [
-                                      TextField(
-                                        controller: _titleController,
-                                        decoration: InputDecoration(
-                                          labelText: 'Title',
+                                  content: Container(
+                                    height: 300,
+                                    child: Column(
+                                      children: [
+                                        TextField(
+                                          controller: _titleController,
+                                          decoration: InputDecoration(
+                                            labelText: 'todo 제목',
+                                            labelStyle: TextStyle(
+                                              color: Color(0xFFF3B0C3), // 포커스된 상태에서의 labelText 색상
+                                            ),
+                                            focusedBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(color: Color(0xFFF3B0C3)), // 포커스된 상태에서의 밑줄 색상
+                                            ),
+                                            enabledBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(color: Color(0xFFF3B0C3)), // 비포커스 상태에서의 밑줄 색상
+                                            ),
+
+                                          ),
                                         ),
-                                      ),
-                                      SizedBox(height: 16),
-                                      TextField(
-                                        controller: _contentController,
-                                        decoration: InputDecoration(
-                                          labelText: 'Content',
+                                        SizedBox(height: 16),
+                                        TextField(
+                                          controller: _contentController,
+                                          decoration: InputDecoration(
+                                            labelText: 'todo 내용',
+                                            labelStyle: TextStyle(
+                                              color: Color(0xFFF3B0C3), // 포커스된 상태에서의 labelText 색상
+                                            ),
+                                            focusedBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(color: Color(0xFFF3B0C3)), // 포커스된 상태에서의 밑줄 색상
+                                            ),
+                                            enabledBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(color: Color(0xFFF3B0C3)), // 비포커스 상태에서의 밑줄 색상
+                                            ),
+
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                   actions: [
                                     TextButton(
