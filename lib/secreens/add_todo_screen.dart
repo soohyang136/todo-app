@@ -51,8 +51,9 @@ class _AddTodoScreenState extends State<AddTodoScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: Center(child: Text('나만의 TODO', style: TextStyle(color: Color(0xFFF3B0C3)),),),
+        title: Text('나만의 TODO', style: TextStyle(color: Color(0xFFF3B0C3)),),
         backgroundColor: Color(0xFFFEE1E8),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -62,20 +63,41 @@ class _AddTodoScreenState extends State<AddTodoScreen> {
             TextField(
               controller: _titleController,
               decoration: InputDecoration(
-                labelText: 'Title',
+                labelText: 'todo 제목',
+                labelStyle: TextStyle(
+                  color: Color(0xFFF3B0C3), // 포커스된 상태에서의 labelText 색상
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFFF3B0C3)), // 포커스된 상태에서의 밑줄 색상
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFFF3B0C3)), // 비포커스 상태에서의 밑줄 색상
+                ),
+
               ),
             ),
             SizedBox(height: 16),
             TextField(
-              controller: _contentController,
+              controller: _titleController,
               decoration: InputDecoration(
-                labelText: 'Content',
+                labelText: 'todo 제목',
+                labelStyle: TextStyle(
+                  color: Color(0xFFF3B0C3), // 포커스된 상태에서의 labelText 색상
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFFF3B0C3)), // 포커스된 상태에서의 밑줄 색상
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFFF3B0C3)), // 비포커스 상태에서의 밑줄 색상
+                ),
+
               ),
             ),
             SizedBox(height: 16),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFFEE1E8)),
               onPressed: _addTodo,
-              child: Text('Add'),
+              child: Text('Add', style: TextStyle(color: Colors.black),),
             ),
           ],
         ),

@@ -38,7 +38,8 @@ class _StateTodoDetailScreen extends State<TodoDetailScreen> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Color(0xFFFEE1E8),
-        title: Text('Todo Details'),
+        title: Text('Todo Details', style: TextStyle(color: Color(0xFFF3B0C3))),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
